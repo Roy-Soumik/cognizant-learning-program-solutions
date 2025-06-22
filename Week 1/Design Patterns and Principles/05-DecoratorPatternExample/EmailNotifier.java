@@ -1,5 +1,5 @@
 public class EmailNotifier implements Notifier{
-    private String email;
+    String email;
 
     public EmailNotifier(String emailAddress) {
         this.email = emailAddress;

@@ -1,5 +1,5 @@
 public class SlackNotifierDecorator extends NotifierDecorator {
-    private String channel;
+    String channel;
 
     public SlackNotifierDecorator(Notifier wrap, String channel) {
         super(wrap);

@@ -1,7 +1,7 @@
 public class Computer {
-    private String CPU;
-    private String RAM;
-    private String storage;
+    String CPU;
+    String RAM;
+    String storage;
 
     private Computer(ComputerBuilder builder) {
         this.CPU = builder.CPU;

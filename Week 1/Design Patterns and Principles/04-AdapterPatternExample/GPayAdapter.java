@@ -1,5 +1,5 @@
 public class GPayAdapter implements PaymentProcessor {
-    private GPayGateway gpay;
+    GPayGateway gpay;
 
     public GPayAdapter(GPayGateway gpay) {
         this.gpay = gpay;

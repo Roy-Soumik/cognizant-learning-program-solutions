@@ -1,5 +1,5 @@
 public class SMSNotifierDecorator  extends NotifierDecorator {
-    private long pno;
+    long pno;
 
     public SMSNotifierDecorator(Notifier wrap, long pno) {
         super(wrap);

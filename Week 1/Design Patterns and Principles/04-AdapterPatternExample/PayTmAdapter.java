@@ -1,5 +1,5 @@
 public class PayTmAdapter implements PaymentProcessor{
-    private PayTmGateway paytm;
+    PayTmGateway paytm;
 
     public PayTmAdapter(PayTmGateway paytm) {
         this.paytm = paytm;

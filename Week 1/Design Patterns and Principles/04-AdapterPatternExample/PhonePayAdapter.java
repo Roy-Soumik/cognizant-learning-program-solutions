@@ -1,5 +1,5 @@
 public class PhonePayAdapter implements PaymentProcessor{
-    private PhonePayGateway phonepay; 
+    PhonePayGateway phonepay; 
 
     public PhonePayAdapter(PhonePayGateway phonepay) {
         this.phonepay = phonepay;

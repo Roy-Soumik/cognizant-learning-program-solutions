@@ -1,5 +1,5 @@
 public abstract class NotifierDecorator implements Notifier {
-    protected Notifier wrap;
+    Notifier wrap;
 
     public NotifierDecorator(Notifier wrap) {
         this.wrap = wrap;
