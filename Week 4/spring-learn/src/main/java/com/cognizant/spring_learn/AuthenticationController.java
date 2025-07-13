@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.jsonwebtoken.JwtBuilder;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import java.util.Date;
+
 @RestController
 public class AuthenticationController {
 
@@ -27,13 +32,28 @@ public class AuthenticationController {
 //        return map;
 //    }
 
+//    @GetMapping("/authenticate")
+//    public String authenticate(@RequestHeader("Authorization") String authHeader) {
+//        LOGGER.debug("Start");
+//        String user = getUser(authHeader);
+//        LOGGER.debug("User: {}", user);
+//        return "{\"token\":\"\"}";
+//    }
+
     @GetMapping("/authenticate")
-    public String authenticate(@RequestHeader("Authorization") String authHeader) {
-        LOGGER.debug("Start");
+    public Map<String, String> authenticate(@RequestHeader("Authorization") String authHeader) {
+        LOGGER.debug("Start authenticate");
+
         String user = getUser(authHeader);
-        LOGGER.debug("User: {}", user);
-        return "{\"token\":\"\"}";
+        String token = generateJwt(user);
+
+        Map<String, String> map = new HashMap<>();
+        map.put("token", token);
+
+        LOGGER.debug("End authenticate");
+        return map;
     }
+
 
     private String getUser(String authHeader) {
         LOGGER.debug("Start getUser");
@@ -43,5 +63,22 @@ public class AuthenticationController {
         String username = decodedString.split(":")[0];
         LOGGER.debug("Extracted Username: {}", username);
         return username;
+    }
+
+    private String generateJwt(String user) {
+        LOGGER.debug("Start generateJwt");
+
+        JwtBuilder builder = Jwts.builder();
+        builder.setSubject(user);
+
+        builder.setIssuedAt(new Date());
+
+        builder.setExpiration(new Date((new Date()).getTime() + 1200000));
+        builder.signWith(SignatureAlgorithm.HS256, "secretkey");
+
+        String token = builder.compact();
+
+        LOGGER.debug("Generated Token: {}", token);
+        return token;
     }
 }
