@@ -29,12 +29,19 @@ public class SpringLearnApplication {
 		LOGGER.info("END");
 	}
 
+	public static void displayCountry() {
+		ApplicationContext context = new ClassPathXmlApplicationContext("country.xml");
+		Country country = (Country) context.getBean("country", Country.class);
+		LOGGER.info("Country: {}", country);
+	}
+
 	public static void main(String[] args) {
 		LOGGER.info("Starting Application");
 		SpringApplication.run(SpringLearnApplication.class, args);
 		LOGGER.info("Exiting Application");
 
 		displayDate();
+		displayCountry();
 	}
 
 }
