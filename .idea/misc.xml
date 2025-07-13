@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Week 2/JUnit, Mockito and SL4J/my-junit-project/pom.xml" />
+        <option value="$PROJECT_DIR$/Week 3/Spring Core Maven/LibraryManagement/pom.xml" />
+        <option value="$PROJECT_DIR$/Week 3/Spring Core Maven/LibraryManagementSpringBoot/pom.xml" />
+        <option value="$PROJECT_DIR$/Week 3/Spring Data JPA with Hibernate/orm-learn/pom.xml" />
+        <option value="$PROJECT_DIR$/Week 4/spring-learn/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="23" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
