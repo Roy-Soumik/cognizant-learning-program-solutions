@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
-@ImportResource("classpath:employee.xml")
+@ImportResource({ "classpath:employee.xml", "classpath:departments.xml" })
+
 public class EmployeeServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(EmployeeServiceApplication.class, args);
