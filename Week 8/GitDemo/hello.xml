@@ -1,0 +1,4 @@
+<hello>
+  <message>Main version: Hello from main branch</message>
+  <note>Branch version: Hello from GitWork</note>
+</hello>
